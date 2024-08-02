@@ -91,4 +91,4 @@ COPY --from=builder --chown=nobody:root /app/_build/${MIX_ENV}/rel/test ./
 
 USER nobody
 
-CMD ["/app/bin/test", "foreground"]
+CMD ["/app/bin/test", "start"]
