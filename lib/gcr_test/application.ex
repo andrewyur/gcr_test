@@ -8,8 +8,11 @@ defmodule GcrTest.Application do
   @impl true
   def start(_type, _args) do
     children = [
-      # Starts a worker by calling: GcrTest.Worker.start_link(arg)
-      # {GcrTest.Worker, arg}
+      {Bandit,
+       [
+         plug: GcrTest.Plug,
+         port: System.get_env("PORT", "4000")
+       ]}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
